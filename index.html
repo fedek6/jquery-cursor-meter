@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>jQuery cursor meter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Arimo:400,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="themes/odometer-theme-car.css">
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+    	<div id="container">
+	    	<header>
+	    		<h1>jQuery<br>cursor meter</h1>
+	    		<p>Measure distance traveled by cursor</p>
+	    	</header>
+			<article id="demo" class="press-border-top">
+				<div id="counter" class="pure-u-max-1-1 pure-u-med-1-1 pure-u-min-1-1 hide-min hide-med">
+					<p>Your cursor has traveled: <span class="distance-container" id="current-distance"></span> meters.</p>
+					<p>Total distance traveled on this website: <span class="distance-container" id="total-distance"></span> meters.</p>
+				</div><!-- #counter -->
+				<a href="https://github.com/fedek6/jquery-cursor-meter/archive/master.zip" class="btn">Download</a>
+			</article>
+			<article id="instruction" class="press-border-top">
+				<h2>Basic initialization:</h2>
+				<p>Basic initialization will attach to elements with ids <span class="id">#current-distance</span> and <span class="id">#total-distance</span>:</p>
+				<pre class="language-javascript">
+					var cursorMeter = $.cursorMeter();
+				</pre>
+				<p>You can destroy it:</p>
+				<pre class="language-javascript">
+					var data = cursorMeter.destroy();
+				</pre>
+				<p>It will return data object in following format:</p>
+				<ul>
+					<li>x — x-axis distance in centimeters</li>
+					<li>y — y-axis distance in centimeters</li>
+					<li>ratio — how many pixels in one centimeter</li>
+					<li>total — total distance travelled in centimeters</li>
+				</ul>
+				<h2>Available options:</h2>
+				<p>All options are optional but may significally change plugin behaviour.</p>
+				<pre class="language-javascript">
+				// current distance selector string
+				currDistSelector: '#current-distance',
+				// total distance selector string
+				totalDistSelector: '#total-distance',
+				// accuracy integer from 1 to 10 (1 = 0.1 second)
+				refreshRate: 1,
+				// statistics URL (used for permanent stats)
+				updateUrl: null,
+				// automatically round and add unit name (cm, m and km)
+				autoUnitsConverter: true,
+				// callback when data updated
+				onUpdate: null,
+				// callback custom numbers converter
+				converter: null,
+				// base unit returned (only when not using autoUnitsConverter)
+				unitsBase: 'cm'			
+				</pre>
+				<p>Example code used to init this website:</p>
+				<pre class="language-javascript">
+				$(function() {
+					// cursor meter
+					var cursorMeter  = $.cursorMeter({
+						updateUrl: 'php/odometer.php', 
+						autoUnitsConverter: false, 
+						unitsBase: 'm'});
+				});
+				</pre>
+				<h2>Additional resources:</h2>
+				<p>Odometer effect as can be seen on top of this website is not included in my plugin.</p>
+				<p>To obtain such effect simply copy patched version of <a href="js/odometer-patched.js">odometer script</a>.</p>
+				<p>Rest of its resources and instruction can be found <a href="http://github.hubspot.com/odometer/">here</a>.</p>
+				<h3>Statistics</h3>
+				<p>Example of statistics API can be found in php directory of downloaded package (written in PHP).</p>
+			</article>
+			<footer class="press-border-top">
+				<p>Published under GPL2 license.<br><a href="http://realhe.ro">Konrad Fedorczyk 2014</a></p>
+				<p>Buy me more jewelery:<br>
+					BTC: 1w9yuNDqSsChMxpggBuQAXr4KTRuJ6Urm<br>
+					VTC: VbgRi7XHmeJ1LyWFTPb5fFKJUyuaqZrGMB
+				</p>
+			</footer>
+		</div>
+		
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+        <script src="js/jquery.cursormeter.js"></script>
+        <script src="js/odometer-patched.js"></script>
+        <script src="js/jquery.syntaxhighlighter.min.js"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>

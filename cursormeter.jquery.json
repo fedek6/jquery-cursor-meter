@@ -1,0 +1,30 @@
+{
+"name": "cursormeter",
+"title": "jQuery Measure Cursor Distance",
+"description": "Measure distance traveled by cursor with advanced stats.",
+"keywords": [
+"cursor",
+"distance",
+"stats",
+"measure"
+],
+"version": "0.1.0",
+"author": {
+"name": "Konrad Fedorczyk",
+"email": "fedek6@gmail.com",
+"url": "http://blog.realhe.ro"
+},
+"licenses": [
+{
+"type": "GPL v2",
+"url": "https://github.com/fedek6/jquery-cursor-meter/blob/master/LICENSE"
+}
+],
+"bugs": "https://github.com/fedek6/jquery-cursor-meter/issues",
+"homepage": "http://realhe.ro/cursor-meter/",
+"docs": "http://realhe.ro/cursor-meter/",
+"download": "https://github.com/fedek6/jquery-cursor-meter/archive/master.zip",
+"dependencies": {
+"jquery": ">=1.11"
+}
+}

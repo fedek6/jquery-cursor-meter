@@ -1,0 +1,1 @@
+- jquery async: false in ajax function does not work in Opera
