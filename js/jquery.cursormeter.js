@@ -1,21 +1,28 @@
 /**
  * jQuery cursormeter
  * plugin for measuring distance travelled by a mouse cursor
+ * version 0.1.1
  * 	
  * == usage: == 
- * var odometer = $.odometer(options);
+ * var cursorMeter = $.cursorMeter(options);
  * 
- * odometer.data() will return object in following format: 
+ * cursorMeter.data() will return object in following format: 
  * x - distance travelled in x axis
  * y - the same in y
  * total - total distance in pixels
  * ratio - how many pixels in one cm
  * 
- * odometer.destroy() will return data in the same format and remove binding and interval (stopping plugin functionality).
+ * cursorMeter.destroy() will return data in the same format and remove binding and interval (stopping plugin functionality).
  * 
  * == options are: ==
  * currDistSelector - jQuery selector for element with current total distance
+ * totalDistSelector - jQuery selector for total distance (works only with updateUrl)
  * refreshRate - integer how precise measuremnt should be (1 = 100 miliseconds)
+ * updateUrl - URL to script that handles statistics
+ * autoUnitsConverter - automatically round and append unit name
+ * onUpdate - callback on data update
+ * converter - callback for data conversion
+ * unitsBase - cm, m or km (only when not using autoUnitsConverter)
  * 
  * == Compatibility ==
  * Works only with WebKit version of Opera
